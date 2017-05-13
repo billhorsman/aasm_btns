@@ -1,0 +1,12 @@
+<h1>Job</h1>
+<div class="alert alert-info">
+  <%= @job.aasm.current_state.to_s.titleize %>
+</div>
+<% if @job.sleeping? %>
+ <%= link_to "Run", run_job_path, method: :patch, class: "btn btn-success" %>
+<% elsif @job.running? %>
+ <%= link_to "Clean", clean_job_path, method: :patch, class: "btn btn-default" %>
+ <%= link_to "Shut Down", sleep_job_path, method: :patch, class: "btn btn-danger" %>
+<% elsif @job.cleaning? %>
+ <%= link_to "Shut Down", sleep_job_path, method: :patch, class: "btn btn-danger" %>
+<% end %>

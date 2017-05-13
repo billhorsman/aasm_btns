@@ -4,7 +4,11 @@ en:
       run: "Run"
       sleep: "Shut Down"
       clean: "Clean"
+      alarm: "Raise Alarm"
+      fix: "Fix Problem"
     btn_class:
       run: "success"
       sleep: "danger"
       clean: "default"
+      alarm: "danger"
+      fix: "success"

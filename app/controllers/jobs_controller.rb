@@ -19,6 +19,16 @@ class JobsController < ApplicationController
     redirect_to job_path
   end
 
+  def alarm
+    @job.alarm!
+    redirect_to job_path
+  end
+
+  def fix
+    @job.fix!
+    redirect_to job_path
+  end
+
   private
 
     def get_job

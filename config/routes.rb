@@ -5,6 +5,8 @@ Rails.application.routes.draw do
       patch 'run'
       patch 'clean'
       patch 'sleep'
+      patch 'alarm'
+      patch 'fix'
     end
   end
 end

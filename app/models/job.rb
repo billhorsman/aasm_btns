@@ -1,5 +1,6 @@
 class Job
   include AASM
+  include ActiveModel::Model
 
   aasm do
     state :sleeping, initial: true
@@ -18,4 +19,7 @@ class Job
     end
   end
 
+  def persisted?
+    true
+  end
 end

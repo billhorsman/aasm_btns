@@ -3,5 +3,5 @@
   <%= @job.aasm.current_state.to_s.titleize %>
 </div>
 <% @job.aasm.events(possible: true).map(&:name).each do |event| %>
-  <%= link_to event, [event, @job], method: :patch, class: "btn btn-default" %>
+  <%= link_to t(event, scope: [:job, :event]), [event, @job], method: :patch, class: "btn btn-#{t event, scope: [:job, :btn_class]}" %>
 <% end %>
